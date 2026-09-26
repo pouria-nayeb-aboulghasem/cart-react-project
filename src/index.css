@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.cart-item::after {
+  content: "";
+  @apply absolute -bottom-3 left-[50%] translate-[-50%] w-full max-w-lg h-px bg-gray-300;
+}
+
+.cart-item:last-child::after {
+    @apply hidden;
+}

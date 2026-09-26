@@ -1,0 +1,26 @@
+[
+  {
+    "id": 101,
+    "image": "microsoft-surface-laptop-4.jpg",
+    "title": "Microsoft surface laptop 4",
+    "feature": "11th Gen - 16G DDR4 - 512G SSD",
+    "quantity": 2,
+    "price": 499.99
+  },
+  {
+    "id": 102,
+    "image": "microsoft-arc-mouse.jpg",
+    "title": "Microsoft arc mouse",
+    "feature": null,
+    "quantity": 1,
+    "price": 45.99
+  },
+  {
+    "id": 103,
+    "image": "microsoft-slim-pen-2.jpg",
+    "title": "Microsoft slim pen 2",
+    "feature": null,
+    "quantity": 2,
+    "price": 69.99
+  }
+]
