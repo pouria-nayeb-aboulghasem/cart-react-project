@@ -15,7 +15,7 @@ function CartItem({ item, handleDecrement, handleIncrement }: CartItemProps) {
     <li className="grid md:grid-cols-4 gap-3 items-center py-4 cart-item relative">
       <figure>
         <img
-          src={`/src/assets/${image}`}
+          src={`./assets/${image}`}
           alt={`${title}`}
           width="128"
           height="91"
