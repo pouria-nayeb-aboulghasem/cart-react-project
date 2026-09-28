@@ -9,7 +9,7 @@ type CartItemProps = {
 };
 
 function CartItem({ item, handleDecrement, handleIncrement }: CartItemProps) {
-  const { image, title, feature, quantity, price } = item;
+  const { id, image, title, feature, quantity, price } = item;
 
   return (
     <li className="grid md:grid-cols-4 gap-3 items-center py-4 cart-item relative">
@@ -30,7 +30,7 @@ function CartItem({ item, handleDecrement, handleIncrement }: CartItemProps) {
 
       <div className="flex gap-2 items-center md:justify-self-center order-2 md:order-1">
         <button
-          onClick={() => handleDecrement(item.id, item.quantity)}
+          onClick={() => handleDecrement(id, quantity)}
           className="w-8 h-8 flex justify-center items-center rounded-lg bg-gray-200 cursor-pointer hover:bg-gray-300 duration-300 transition-colors"
         >
           {quantity === 1 ? (
@@ -41,7 +41,7 @@ function CartItem({ item, handleDecrement, handleIncrement }: CartItemProps) {
         </button>
         <span>{quantity}</span>
         <button
-          onClick={() => handleIncrement(item.id)}
+          onClick={() => handleIncrement(id)}
           className="w-8 h-8 flex justify-center items-center rounded-lg bg-gray-200 cursor-pointer hover:bg-gray-300 duration-300 transition-colors"
         >
           <RiAddLine size={16} />

@@ -8,28 +8,35 @@ import CartItem from "./CartItem";
 function Cart() {
   const [shoppingCart, setShoppingCart] = useState<CartItemType[]>(getCart());
 
+  // step 4
   const calculateTotal = useCallback(() => {
     shoppingCart.reduce((total, item) => total + item.price * item.quantity, 0);
   }, [shoppingCart]);
 
+  // step 5
   useEffect(() => {
     calculateTotal();
   }, [calculateTotal]);
 
+  // step 1
   function handleIncrement(id: number) {
-    setShoppingCart((prevItem) =>
-      prevItem.map((item) =>
+    // increase item quantity
+    setShoppingCart((prevCollection) =>
+      prevCollection.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
       ),
     );
   }
 
+  // step 2
   function handleDecrement(id: number, quantity: number) {
     if (quantity === 1) {
+      // delete row from UI
       setShoppingCart(shoppingCart.filter((item) => item.id !== id));
     } else {
-      setShoppingCart((prevItem) =>
-        prevItem.map((item) =>
+      // decrease item quantity
+      setShoppingCart((prevCollection) =>
+        prevCollection.map((item) =>
           item.id === id ? { ...item, quantity: item.quantity - 1 } : item,
         ),
       );
@@ -43,6 +50,7 @@ function Cart() {
         ShoppingCart
       </h1>
 
+      {/* step 3 */}
       <div className="grid md:grid-cols-4 gap-4 my-12">
         <ul className="flex flex-col gap-6 border bg-gray-100 border-gray-200 rounded-lg p-4 md:col-span-3">
           {shoppingCart.map((item) => (
@@ -55,6 +63,7 @@ function Cart() {
           ))}
         </ul>
 
+        {/* step 6 */}
         <PaymentPanel
           totalPayment={shoppingCart.reduce(
             (total, item) => total + item.price * item.quantity,
